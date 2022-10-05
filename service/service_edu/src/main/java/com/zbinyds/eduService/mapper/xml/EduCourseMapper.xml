@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zbinyds.eduService.mapper.EduCourseMapper">
+
+    <!-- PublishCourseInfoVo getPublishCourseInfo(String courseId); -->
+    <select id="getPublishCourseInfo" resultType="com.zbinyds.eduService.pojo.vo.PublishCourseInfoVo">
+        SELECT
+            t1.title,t1.cover,t1.lesson_num AS lessonNum,t1.price,
+            t2.name AS teacherName,
+            t3.title AS subjectLevelOne,
+            t4.title AS subjectLevelTwo
+        FROM edu_course t1
+            LEFT JOIN edu_teacher t2 ON t1.teacher_id = t2.id
+            LEFT JOIN edu_subject t3 ON t1.subject_id = t3.id
+            LEFT JOIN edu_subject t4 ON t1.subject_parent_id = t4.id
+        WHERE t1.id = #{courseId}
+        AND t1.is_deleted = 0;
+    </select>
+
+    <!-- Map<String, Object> getCourseDetail(String courseId); -->
+    <select id="getCourseDetail" resultType="map">
+        SELECT
+            t1.title,t1.price,t1.buy_count as buyCount,t1.view_count as viewCount,t1.lesson_num as lessonNum,t1.cover,
+            t2.description,
+            t3.name,t3.career,t3.avatar,t3.id AS teacherId
+        FROM edu_course t1
+        LEFT JOIN edu_course_description t2 ON t1.id = t2.id
+        LEFT JOIN edu_teacher t3 ON t1.teacher_id = t3.id
+        WHERE t1.id = #{courseId}
+    </select>
+
+    <!-- Page<Map> getPage(Page<Map> mapPage, CourseQueryVo courseQueryVo); -->
+    <sql id="BaseColumns">
+        t1.id,t1.teacher_id AS teacherId,t1.subject_id AS subjectId,t1.subject_parent_id AS subjectParentId,
+        t1.title,t1.price,t1.lesson_num AS lessonNum,t1.cover,t1.buy_count AS buyCount,t1.view_count AS viewCount,
+        t1.version,t1.status,t1.is_deleted AS isDeleted,t1.gmt_create AS gmtCreate,t1.gmt_modified AS gmtModified,
+        COUNT(t2.course_id) AS commentNum
+    </sql>
+    <select id="getPage" resultType="map">
+        select <include refid="BaseColumns"></include> FROM edu_course t1
+        LEFT JOIN edu_comment t2 ON t1.id = t2.course_id
+        <where>
+            status = 'Normal'
+            <if test="courseQueryVo.subjectParentId != '' and courseQueryVo.subjectParentId != null">
+                and t1.subject_parent_id = #{courseQueryVo.subjectParentId}
+            </if>
+            <if test="courseQueryVo.subjectId != '' and courseQueryVo.subjectId != null">
+                and t1.subject_id = #{courseQueryVo.subjectId}
+            </if>
+            <if test="courseQueryVo.title != '' and courseQueryVo.title != null">
+                and t1.title like '%${courseQueryVo.title}%'
+            </if>
+        </where>
+        GROUP BY t1.id
+        <if test="courseQueryVo.buyCountSort != '' and courseQueryVo.buyCountSort != null">
+            ORDER BY t1.buy_count DESC
+        </if>
+        <if test="courseQueryVo.gmtCreateSort != '' and courseQueryVo.gmtCreateSort != null">
+            ORDER BY t1.gmt_create DESC
+        </if>
+        <if test="courseQueryVo.priceSort != '' and courseQueryVo.priceSort != null">
+            ORDER BY t1.price DESC
+        </if>
+    </select>
+
+</mapper>

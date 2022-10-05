@@ -1,0 +1,67 @@
+# 服务端口
+server:
+  port: 8022
+
+spring:
+  # 服务名
+  application:
+    name: service-gateway
+  # 环境设置：dev（开发环境）、test（测试环境）、prod（生产环境）
+  profiles:
+    active: dev
+  # 将服务注册到nacos中
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # nacos地址
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启服务发现
+      # gateway网关所管理的路由
+      routes:
+        # 配置service-edu服务（核心服务，编写核心接口）
+        - id: service-edu # 路由id
+          uri: lb://service-edu # 服务名
+          predicates:
+            - Path=/eduService/** # 断言规则。按照路径匹配
+        # 配置service-oss服务（阿里云短信服务）
+        - id: service-oss # 路由id
+          uri: lb://service-oss # 服务名
+          predicates:
+            - Path=/eduoss/** # 断言规则。按照路径匹配
+        # 配置service-vod服务（阿里云视频点播服务）
+        - id: service-vod # 路由id
+          uri: lb://service-vod # 服务名
+          predicates:
+            - Path=/eduVod/** # 断言规则。按照路径匹配
+        # 配置service-cms服务（前后台轮播图服务）
+        - id: service-cms # 路由id
+          uri: lb://service-cms # 服务名
+          predicates:
+            - Path=/educms/** # 断言规则。按照路径匹配
+        # 配置service-sms服务（阿里云短信验证服务）
+        - id: service-sms # 路由id
+          uri: lb://service-sms # 服务名
+          predicates:
+            - Path=/edusms/** # 断言规则。按照路径匹配
+        # 配置service-order服务（订单服务）
+        - id: service-order # 路由id
+          uri: lb://service-order # 服务名
+          predicates:
+            - Path=/eduOrder/** # 断言规则。按照路径匹配
+        # 配置service-ucenter服务（前台用户服务）
+        - id: service-ucenter # 路由id
+          uri: lb://service-ucenter # 服务名
+          predicates:
+            - Path=/ucenter/** # 断言规则。按照路径匹配
+        # 配置service-statistics服务（后台统计管理服务）
+        - id: service-statistics # 路由id
+          uri: lb://service-statistics # 服务名
+          predicates:
+            - Path=/eduStatistics/** # 断言规则。按照路径匹配
+        # 配置service-rabc服务（后台权限管理服务）
+        - id: service-acl # 路由id
+          uri: lb://service-acl # 服务名
+          predicates:
+            - Path=/**/rabc/** # 断言规则。按照路径匹配

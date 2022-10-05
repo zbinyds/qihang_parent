@@ -1,0 +1,28 @@
+server:
+  # 端口号
+  port: 8002
+spring:
+  application:
+    # 配置服务名
+    name: service-oss
+  profiles:
+    # 环境设置：dev、test、prod
+    active: dev
+  servlet:
+    multipart:
+      max-request-size: 20MB # 设置单次请求文件大小最大为20MB
+      max-file-size: 5MB # 设置上传单个文件最大5MB
+  # 将服务注册到nacos中
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # nacos地址
+
+# 将阿里云OSS相关配置写入配置文件中
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-shenzhen.aliyuncs.com # 地域节点
+      keyid: LTAI5t94ua4j9W5mp24sP9WT # AccessKey
+      keysecret: yRzxmVz0ZhvaeLHn0qvzKLqj1r08fE # 秘钥
+      bucketname: edu-qihang # bucket
