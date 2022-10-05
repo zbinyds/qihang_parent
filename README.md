@@ -10,6 +10,7 @@
 相关技术栈介绍：
 - 前端：Vue + Element-ui + nuxt
 - 后端：SpringBoot + Maven + SpringCloud + Mybatis-Plus + Redis + Mysql
+- 微服务技术：nacos注册中心(实现微服务统一管理)、openfeign服务调用(实现服务远程调用)、hystrix熔断器(实现熔断降级)、gateway网关(实现请求路由转发、权限控制)
 
 
 #### 安装教程
