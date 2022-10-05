@@ -8,7 +8,7 @@
 
 相关技术栈介绍：
 - 前端：Vue + Element-ui + nuxt
-- 后端：SpringBoot + Maven + SpringClound + Mybatis-Plus + Redis + Mysql
+- 后端：SpringBoot + Maven + SpringCloud + Mybatis-Plus + Redis + Mysql
 
 
 #### 安装教程
