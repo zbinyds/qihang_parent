@@ -35,14 +35,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!-- 设置配置处理器不进行打包(可有可无，不影响) -->
+                <!-- 将该模块生成的jar包配置为依赖jar包，该jar包不可运行 -->
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
