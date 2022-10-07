@@ -58,9 +58,14 @@
 - 咨询模块(待开发)
     - 通过此服务可实现与开发者沟通，完善项目细节。
 
-#### 参与贡献
+#### 项目前端运行
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+- 后台管理系统前端
+    1.  进入admin_dist文件夹下，打开cmd命令窗口
+    2.  npm install -g serve 
+    3.  serve -s dist
+
+- 前台用户系统前端
+    1.  进入user_center文件夹下，打开cmd命令窗口
+    2.  npm install
+    3.  npm run start
