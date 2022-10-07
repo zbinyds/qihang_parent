@@ -1,0 +1,80 @@
+[
+  {
+    "name": "article",
+    "path": "/article",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\article\\\\index.vue",
+    "chunkName": "pages/article/index"
+  },
+  {
+    "name": "consulte",
+    "path": "/consulte",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\consulte\\\\index.vue",
+    "chunkName": "pages/consulte/index"
+  },
+  {
+    "name": "course",
+    "path": "/course",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\course\\\\index.vue",
+    "chunkName": "pages/course/index"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\login.vue",
+    "chunkName": "pages/login"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\register.vue",
+    "chunkName": "pages/register"
+  },
+  {
+    "name": "teacher",
+    "path": "/teacher",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\teacher\\\\index.vue",
+    "chunkName": "pages/teacher/index"
+  },
+  {
+    "name": "ucenter",
+    "path": "/ucenter",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\ucenter\\\\index.vue",
+    "chunkName": "pages/ucenter/index"
+  },
+  {
+    "name": "course-id",
+    "path": "/course/:id",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\course\\\\_id.vue",
+    "chunkName": "pages/course/_id"
+  },
+  {
+    "name": "order-id",
+    "path": "/order/:id?",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\order\\\\_id.vue",
+    "chunkName": "pages/order/_id"
+  },
+  {
+    "name": "pay-id",
+    "path": "/pay/:id?",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\pay\\\\_id.vue",
+    "chunkName": "pages/pay/_id"
+  },
+  {
+    "name": "player-id",
+    "path": "/player/:id?",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\player\\\\_id.vue",
+    "chunkName": "pages/player/_id"
+  },
+  {
+    "name": "teacher-id",
+    "path": "/teacher/:id",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\teacher\\\\_id.vue",
+    "chunkName": "pages/teacher/_id"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "E:\\\\front_study\\\\qihang_front\\\\qihang-user\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

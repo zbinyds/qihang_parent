@@ -1,0 +1,35 @@
+{
+  "entry": "server.js",
+  "files": {
+    "pages/article/index.js": "pages/article/index.js",
+    "pages/consulte/index.js": "pages/consulte/index.js",
+    "pages/course/_id.js": "pages/course/_id.js",
+    "pages/course/index.js": "pages/course/index.js",
+    "pages/index.js": "pages/index.js",
+    "pages/login.js": "pages/login.js",
+    "pages/order/_id.js": "pages/order/_id.js",
+    "pages/pay/_id.js": "pages/pay/_id.js",
+    "pages/player/_id.js": "pages/player/_id.js",
+    "pages/register.js": "pages/register.js",
+    "pages/teacher/_id.js": "pages/teacher/_id.js",
+    "pages/teacher/index.js": "pages/teacher/index.js",
+    "pages/ucenter/index.js": "pages/ucenter/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "pages/article/index.js": "pages/article/index.js.map",
+    "pages/consulte/index.js": "pages/consulte/index.js.map",
+    "pages/course/_id.js": "pages/course/_id.js.map",
+    "pages/course/index.js": "pages/course/index.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "pages/login.js": "pages/login.js.map",
+    "pages/order/_id.js": "pages/order/_id.js.map",
+    "pages/pay/_id.js": "pages/pay/_id.js.map",
+    "pages/player/_id.js": "pages/player/_id.js.map",
+    "pages/register.js": "pages/register.js.map",
+    "pages/teacher/_id.js": "pages/teacher/_id.js.map",
+    "pages/teacher/index.js": "pages/teacher/index.js.map",
+    "pages/ucenter/index.js": "pages/ucenter/index.js.map",
+    "server.js": "server.js.map"
+  }
+}
