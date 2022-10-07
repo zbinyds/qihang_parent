@@ -74,6 +74,7 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
 
     /**
      * 进行用户授权的方法
+     *
      * @param request
      * @return
      */
@@ -85,7 +86,7 @@ public class TokenAuthenticationFilter extends BasicAuthenticationFilter {
             String userName = tokenManager.getUserFromToken(token);
 
             // 从redis中获取登录用户的权限列表
-            List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get(userName);
+            List<String> permissionValueList = (List<String>) redisTemplate.opsForValue().get("user::" + userName);
             // 进行授权，将获取到的权限列表赋给当前用户
             Collection<GrantedAuthority> authorities = new ArrayList<>();
             for (String permissionValue : permissionValueList) {
