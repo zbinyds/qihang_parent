@@ -1,29 +1,58 @@
 # qihang_parent
 
 #### 介绍
-起航在线教育平台
+起航在线教育平台：是一个B2C模式的职业技能在线教育系统，分为前台用户系统和后台管理平台。前台用户系统主要面向用户使用，提供了热门课程信息浏览、热门讲师信息浏览、
+                购买课程、课程视频在线观看等服务。后台管理平台主要面向管理人员使用，提供了讲师管理、课程分类管理、课程管理等服务对前台系统进行维护。
 
 #### 软件架构
 项目采用前后端分离开发模式以及微服务架构思想进行设计。
 ![输入图片说明](整体架构图.png)
 
 相关技术栈介绍：
-- 前端：Vue + Element-ui + nuxt
-- 后端：SpringBoot + Maven + SpringCloud + Mybatis-Plus + Redis + Mysql
-- 微服务技术：nacos注册中心(实现微服务统一管理)、openfeign服务调用(实现服务远程调用)、hystrix熔断器(实现熔断降级)、gateway网关(实现请求路由转发、权限控制)
+- 前端：**Vue + Element-ui(管理后台) + nuxt(用户前台)**
+- 后端：**SpringBoot + Maven + SpringCloud + Mybatis-Plus + Redis + Mysql**
+- 微服务技术：**nacos注册中心**(实现微服务统一管理)、**openfeign服务调用**(实现服务远程调用)、**hystrix熔断器**(实现熔断降级)、**gateway网关**(实现请求路由转发、权限控制)
 
 
-#### 安装教程
+#### 后台管理系统功能实现
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 权限管理
+    - 权限菜单管理
+    - 系统角色管理
+    - 系统用户管理
+- 讲师管理
+- 课程分类管理
+- 课程管理
+- 前台管理
+    - 轮播图管理
+    - 课程评论管理
+    - 订单管理
+- 统计分析
+    - 生成图表展示
 
-#### 使用说明
+#### 前台用户系统功能实现
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 首页
+    - 轮播图
+    - 热门课程
+    - 首席讲师
+- 课程分类展示
+    - 免费课程在线观看
+    - 收费课程支付后可观看
+    - 收藏课程
+    - 课程评论
+- 讲师展示
+- 登录注册
+    - 登录
+        - 手机号密码登录
+        - 微信登录
+    - 注册
+        - 短信验证码注册
+- 用户中心
+    - 修改用户基本信息
+    - 查看已购买课程
+    - 查看已收藏课程
+    - 查看视频观看历史记录(待完善)
 
 #### 参与贡献
 
@@ -31,13 +60,3 @@
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
